@@ -1,0 +1,33 @@
+name: بروزرسانی خودکار پک‌ها
+
+on:
+  schedule:
+    - cron: '0 * * * *'   # هر ساعت، دقیقه صفر
+  workflow_dispatch: {}    # امکان اجرای دستی از تب Actions
+
+permissions:
+  contents: write
+
+jobs:
+  update-packs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: چک‌اوت مخزن
+        uses: actions/checkout@v4
+
+      - name: ساخت فایل packs-data.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/build_packs_data.py
+
+      - name: کامیت و پوش تغییرات (فقط اگه چیزی عوض شده باشه)
+        run: |
+          git config user.name "pack-bot"
+          git config user.email "actions@github.com"
+          git add packs-data.json
+          if ! git diff --cached --quiet; then
+            git commit -m "بروزرسانی خودکار packs-data.json"
+            git push
+          else
+            echo "چیزی تغییر نکرده بود، کامیتی لازم نیست."
+          fi
