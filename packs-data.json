@@ -1,4 +1,10 @@
 {
-  "updatedAt": "2026-07-15T18:45:37Z",
-  "packs": []
+  "updatedAt": "2026-07-15T18:53:50Z",
+  "packs": [
+    {
+      "name": "ریسورس تستی",
+      "java": "https://raw.githubusercontent.com/yaniyorganov-sys/Packiran/main/Pack/ریسورس تستی/Java/vazir-font-v16.1.0.zip",
+      "bedrock": null
+    }
+  ]
 }
