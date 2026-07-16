@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-16T15:37:06Z",
+  "updatedAt": "2026-07-16T16:32:57Z",
   "packs": [
     {
       "name": "fat cat ریسورس پک",
@@ -7,5 +7,6 @@
       "bedrock": "https://raw.githubusercontent.com/yaniyorganov-sys/Packiran/main/Pack/fat cat ریسورس پک/Bedrock/Fat%20Cat%20%5B16x%5D(1).mcpack",
       "description": "ساز گار با نسخه 1.21 به بالا"
     }
-  ]
+  ],
+  "mods": []
 }
