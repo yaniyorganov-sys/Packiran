@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-07-16T09:36:00Z",
+  "updatedAt": "2026-07-16T09:45:20Z",
   "packs": [
     {
       "name": "fat cat ریسورس پک",
       "java": null,
-      "bedrock": null,
+      "bedrock": "https://raw.githubusercontent.com/yaniyorganov-sys/Packiran/main/Pack/fat cat ریسورس پک/Bedrock/Fat%20Cat%20%5B16x%5D(1).mcpack",
       "description": null
     }
   ]
