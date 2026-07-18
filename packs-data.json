@@ -1,17 +1,17 @@
 {
-  "updatedAt": "2026-07-18T16:30:37Z",
+  "updatedAt": "2026-07-18T16:35:59Z",
   "packs": [
     {
       "name": "Batman",
       "java": null,
       "bedrock": "https://raw.githubusercontent.com/Net2027/Packiran/main/Pack/Batman/Bedrock/batman_32x.rar",
-      "description": "ساز گار با نسخه 1.21 به بالا"
+      "description": "سازگار با نسخه 1.21 به بالا"
     },
     {
       "name": "Fat cat",
       "java": null,
       "bedrock": "https://raw.githubusercontent.com/Net2027/Packiran/main/Pack/Fat%20cat/Bedrock/Fat%20Cat%20%5B16x%5D(1).rar",
-      "description": "ساز گار با نسخه 1.21 به بالا"
+      "description": "سازگار با نسخه 1.21 به بالا"
     },
     {
       "name": "Jason voorhees",
