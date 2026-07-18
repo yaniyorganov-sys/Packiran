@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-18T16:36:23Z",
+  "updatedAt": "2026-07-18T16:36:41Z",
   "packs": [
     {
       "name": "Batman",
@@ -29,7 +29,7 @@
       "name": "Rigel",
       "java": null,
       "bedrock": "https://raw.githubusercontent.com/Net2027/Packiran/main/Pack/Rigel/Bedrock/Rigel%20%5BBedrock%5D.rar",
-      "description": "ساز گار با نسخه 1.21 به بالا"
+      "description": "سازگار با نسخه 1.21 به بالا"
     },
     {
       "name": "Sunflower",
