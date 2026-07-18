@@ -1,0 +1,68 @@
+{
+  "updatedAt": "2026-07-18T16:30:37Z",
+  "packs": [
+    {
+      "name": "Batman",
+      "java": null,
+      "bedrock": "https://raw.githubusercontent.com/Net2027/Packiran/main/Pack/Batman/Bedrock/batman_32x.rar",
+      "description": "ساز گار با نسخه 1.21 به بالا"
+    },
+    {
+      "name": "Fat cat",
+      "java": null,
+      "bedrock": "https://raw.githubusercontent.com/Net2027/Packiran/main/Pack/Fat%20cat/Bedrock/Fat%20Cat%20%5B16x%5D(1).rar",
+      "description": "ساز گار با نسخه 1.21 به بالا"
+    },
+    {
+      "name": "Jason voorhees",
+      "java": null,
+      "bedrock": "https://raw.githubusercontent.com/Net2027/Packiran/main/Pack/Jason%20voorhees/Bedrock/jason%20voorhees%20%5BBedrock%5D.rar",
+      "description": "ساز گار با نسخه 1.21 به بالا"
+    },
+    {
+      "name": "Kepler",
+      "java": null,
+      "bedrock": "https://raw.githubusercontent.com/Net2027/Packiran/main/Pack/Kepler/Bedrock/Kepler%20%5BBedrock%5D.rar",
+      "description": "ساز گار با نسخه 1.21 به بالا"
+    },
+    {
+      "name": "Rigel",
+      "java": null,
+      "bedrock": "https://raw.githubusercontent.com/Net2027/Packiran/main/Pack/Rigel/Bedrock/Rigel%20%5BBedrock%5D.rar",
+      "description": "ساز گار با نسخه 1.21 به بالا"
+    },
+    {
+      "name": "Sunflower",
+      "java": null,
+      "bedrock": "https://raw.githubusercontent.com/Net2027/Packiran/main/Pack/Sunflower/Bedrock/Sunflower.rar",
+      "description": "ساز گار با نسخه 1.21 به بالا"
+    },
+    {
+      "name": "Tangerine",
+      "java": null,
+      "bedrock": "https://raw.githubusercontent.com/Net2027/Packiran/main/Pack/Tangerine/Bedrock/Tangerine%20-%20SamStrix%205K%20Texture%20Pack%20%5BBedrock%5D.rar",
+      "description": "ساز گار با نسخه 1.21 به بالا"
+    },
+    {
+      "name": "Tlaloc",
+      "java": null,
+      "bedrock": "https://raw.githubusercontent.com/Net2027/Packiran/main/Pack/Tlaloc/Bedrock/Tlaloc%20%5BBedrock%5D.rar",
+      "description": "ساز گار با نسخه 1.21 به بالا"
+    },
+    {
+      "name": "Todoroki",
+      "java": null,
+      "bedrock": "https://raw.githubusercontent.com/Net2027/Packiran/main/Pack/Todoroki/Bedrock/Todoroki.rar",
+      "description": "ساز گار با نسخه 1.21 به بالا"
+    },
+    {
+      "name": "Venom",
+      "java": null,
+      "bedrock": "https://raw.githubusercontent.com/Net2027/Packiran/main/Pack/Venom/Bedrock/Venom16x.rar",
+      "description": "ساز گار با نسخه 1.21 به بالا"
+    }
+  ],
+  "mods": [],
+  "shaders": [],
+  "films": []
+}
