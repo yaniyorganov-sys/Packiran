@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-18T16:36:41Z",
+  "updatedAt": "2026-07-18T16:36:53Z",
   "packs": [
     {
       "name": "Batman",
@@ -35,7 +35,7 @@
       "name": "Sunflower",
       "java": null,
       "bedrock": "https://raw.githubusercontent.com/Net2027/Packiran/main/Pack/Sunflower/Bedrock/Sunflower.rar",
-      "description": "ساز گار با نسخه 1.21 به بالا"
+      "description": "سازگار با نسخه 1.21 به بالا"
     },
     {
       "name": "Tangerine",
