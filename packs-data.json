@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-19T07:14:18Z",
+  "updatedAt": "2026-07-19T07:23:38Z",
   "packs": [
     {
       "name": "Akatsuki",
@@ -80,6 +80,12 @@
       "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/Sky%20Block/File/Lucky%20BlockSkyblock.zip",
       "description": "بدراک 1.20 به بالا",
       "compatibility": "سازگار با بدراک"
+    },
+    {
+      "name": "اکشن اند استاف نسخه 1.11 (جدید ترین نسخه )",
+      "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/اکشن اند استاف نسخه 1.11 (جدید ترین نسخه )/File/Actions%20Stuff%201.11",
+      "description": "نسخه 1.26.30 به بالا",
+      "compatibility": "سازگار بدراک"
     },
     {
       "name": "تبدیل شدن به ماب ها",
