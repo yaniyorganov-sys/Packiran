@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-19T16:11:48Z",
+  "updatedAt": "2026-07-19T16:12:00Z",
   "packs": [
     {
       "name": "Akatsuki",
@@ -69,12 +69,6 @@
     }
   ],
   "mods": [
-    {
-      "name": "Lucky-SkyBlock-Map-MCPE-",
-      "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/Lucky-SkyBlock-Map-MCPE-/File/Lucky-SkyBlock-Map-MCPE-1.21.mcworld",
-      "description": "نسخه 1.20 به بالا",
-      "compatibility": "سازگار بدراک"
-    },
     {
       "name": "Sky Block",
       "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/Sky%20Block/File/Lucky%20BlockSkyblock.zip",
