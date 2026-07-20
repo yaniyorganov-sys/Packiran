@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-20T13:05:25Z",
+  "updatedAt": "2026-07-20T13:08:23Z",
   "packs": [
     {
       "name": "4sangre",
@@ -142,6 +142,13 @@
       "description": "بدراک 1.20 به بالا",
       "compatibility": "سازگار بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/مود ساخت شهر/IMG_20260720_153958_484.jpg"
+    },
+    {
+      "name": "مود سونیک",
+      "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/مود سونیک/File/Sonic%20Add-On.mcaddon",
+      "description": "براک 1.20 به بالا",
+      "compatibility": "سازگار بدراک",
+      "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/مود سونیک/photo_2025-01-07_22-31-18.jpg"
     },
     {
       "name": "مپ وان بلاک",
