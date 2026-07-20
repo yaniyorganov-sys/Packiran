@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-20T11:52:24Z",
+  "updatedAt": "2026-07-20T11:53:06Z",
   "packs": [
     {
       "name": "4sangre",
@@ -134,7 +134,7 @@
       "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/مود انواع سوپر مارکت برای ماینکرافت/File/Market%20Build%20Set%20(Add-on).mcaddon",
       "description": "بدراک 1.20 به بالا",
       "compatibility": "سازگار بدراک",
-      "icon": null
+      "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/مود انواع سوپر مارکت برای ماینکرافت/IMG_20260720_152114_714.jpg"
     },
     {
       "name": "مود ساخت شهر",
