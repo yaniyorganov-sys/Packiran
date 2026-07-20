@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پک ایران | مرجع تخصصی ماینکرفت</title>
+    
+    <!-- آیکون‌های Phosphor با ویژگی defer -->
+    <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
+
+    <style>
+        @font-face {
+            font-family: 'Vazir';
+            src: url('fonts/Vazir-Thin.woff2') format('woff2');
+            font-weight: 100;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Vazir';
+            src: url('fonts/Vazir-Light.woff2') format('woff2');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Vazir';
+            src: url('fonts/Vazir.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Vazir';
+            src: url('fonts/Vazir-Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Vazir';
+            src: url('fonts/Vazir-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            --bg-dark: #0f172a;
+            --bg-darker: #020617;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --primary-cyan: #06b6d4;
+            --primary-blue: #3b82f6;
+            --primary-gradient: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+            
+            --glass-bg: rgba(15, 23, 42, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            
+            --font-family: 'Vazir', sans-serif;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-cyan) var(--bg-darker);
+        }
+
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--bg-darker); }
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-gradient);
+            border-radius: 10px;
+            border: 2px solid var(--bg-darker);
+        }
+        ::-webkit-scrollbar-thumb:hover { background: var(--primary-cyan); }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .fixed-bg {
+            position: fixed;
+            inset: 0;
+            background: 
+                linear-gradient(rgba(15, 23, 42, 0.75), rgba(2, 6, 23, 0.95)),
+                url('page.jpg') no-repeat center center;
+            background-size: cover;
+            z-index: -3;
+            pointer-events: none;
+            /* ارتقا لایه بکگراند برای جلوگیری از Repaint */
+            transform: translateZ(0);
+        }
+
+        .bg-glow {
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translate3d(-50%, -50%, 0);
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        #loader-wrapper {
+            position: fixed;
+            inset: 0;
+            background: var(--bg-darker);
+            z-index: 99999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+            will-change: opacity;
+        }
+
+        .loader-hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .loader-container {
+            background: var(--glass-bg);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            padding: 50px 40px;
+            border-radius: 28px;
+            box-shadow: var(--glass-shadow);
+            width: 90%;
+            max-width: 480px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            animation: fadeInScale 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            transform: translateZ(0); /* ایزوله کردن رندر */
+        }
+
+        @keyframes fadeInScale {
+            0% { opacity: 0; transform: scale(0.95) translateY(10px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .loader-logo {
+            height: 90px;
+            width: 90px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 20px rgba(6, 182, 212, 0.6));
+            animation: float-loader 3s ease-in-out infinite;
+        }
+
+        @keyframes float-loader {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .brand-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .status-text {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+        }
+
+        .status-text::after {
+            content: '...';
+            display: inline-block;
+            width: 20px;
+            text-align: right;
+            animation: dots 1.5s steps(4, end) infinite;
+        }
+
+        @keyframes dots {
+            0%, 20% { content: ''; }
+            40% { content: '.'; }
+            60% { content: '..'; }
+            80%, 100% { content: '...'; }
+        }
+
+        .progress-track {
+            width: 100%;
+            height: 8px;
+            background: rgba(2, 6, 23, 0.6);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: var(--primary-gradient);
+            border-radius: 10px;
+            box-shadow: 0 0 14px var(--primary-cyan);
+            transition: width 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.25) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            animation: shimmer 1.5s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .meta-info {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: rgba(148, 163, 184, 0.6);
+            font-weight: 500;
+        }
+
+        .percent {
+            color: var(--primary-cyan);
+            font-weight: 700;
+        }
+
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translate3d(0, 30px, 0); }
+            100% { opacity: 1; transform: translate3d(0, 0, 0); }
+        }
+
+        .animate-up {
+            opacity: 0;
+            animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; } 
+        .delay-2 { animation-delay: 0.4s; } 
+        .delay-3 { animation-delay: 0.6s; } 
+
+        /* لایه بندی کامپوننت‌های شیشه‌ای برای جدا ماندن از ریکالکولت انیمیشن Grid */
+        header, .card, footer, .coming-soon-wrapper {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            
+            /* پرو-فیچرهای بهینه سازی کامپوزیت گرافیک */
+            contain: paint;
+            transform: translateZ(0); 
+            backface-visibility: hidden;
+        }
+
+        header {
+            max-width: 1300px;
+            width: 92%;
+            margin: 30px auto 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            border-radius: 20px;
+            position: relative;
+            z-index: 100;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--text-main);
+            cursor: default;
+            user-select: none;
+        }
+
+        .logo-section img {
+            height: 68px;
+            width: 68px;
+            object-fit: cover;
+            border-radius: 50%;
+            filter: drop-shadow(0 0 10px rgba(6, 182, 212, 0.4));
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .logo-section img:hover {
+            transform: scale(1.08) rotate(-3deg);
+            filter: drop-shadow(0 0 18px rgba(6, 182, 212, 0.8));
+        }
+
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 1rem;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--text-main);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 50%;
+            width: 0%;
+            height: 2px;
+            background: var(--primary-gradient);
+            border-radius: 5px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(50%);
+            box-shadow: 0 0 10px rgba(6, 182, 212, 0.6);
+        }
+
+        nav a:hover::after, nav a.active::after { width: 100%; }
+
+        main {
+            flex: 1;
+            max-width: 1300px;
+            width: 92%;
+            margin: auto;
+            padding: 60px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            z-index: 10;
+        }
+
+        .tab-section {
+            display: none;
+            animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .tab-section.active-tab {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+        }
+
+        .hero-section {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-section h1 span {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-section p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 0;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            border-radius: 24px; 
+            padding: 40px;
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s, border-color 0.4s;
+            position: relative;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card:hover {
+            transform: translate3d(0, -10px, 0);
+            border-color: rgba(6, 182, 212, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(6, 182, 212, 0.1);
+        }
+
+        /* رویکرد جدید: ترنسلیت فیزیکی یک دایو به جای محاسبه مداوم گرادیانت */
+        .card-glow-wrapper {
+            position: absolute;
+            inset: 0;
+            border-radius: 24px;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .card:hover .card-glow-wrapper {
+            opacity: 1;
+        }
+
+        .card-glow {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle closest-side, rgba(6, 182, 212, 0.1), transparent 100%);
+            /* متمرکز کردن دقیق مرکز گرادیانت با نقطه ماوس (400 پیکسل نصف ابعاد است) */
+            top: -400px;
+            left: -400px;
+            pointer-events: none;
+            will-change: transform;
+            /* استایل پیش‌فرض */
+            transform: translate3d(0, 0, 0);
+        }
+
+        .card-graphic {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            background: rgba(6, 182, 212, 0.1);
+            color: var(--primary-cyan);
+            border-radius: 20px;
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            position: relative;
+            z-index: 2;
+            transition: var(--transition);
+        }
+
+        .card:hover .card-graphic {
+            transform: scale(1.1) rotate(5deg);
+            background: var(--primary-gradient);
+            color: white;
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+        }
+
+        .card-info {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 2;
+        }
+
+        .card-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .card-title i {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            transition: transform 0.3s;
+        }
+
+        .card:hover .card-title i {
+            transform: translateX(-5px);
+            color: var(--primary-cyan);
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .coming-soon-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px;
+            text-align: center;
+            border-radius: 24px;
+            max-width: 600px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .coming-soon-wrapper i {
+            font-size: 4.5rem;
+            color: var(--primary-cyan);
+            margin-bottom: 25px;
+            filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.4));
+            animation: float-loader 3s ease-in-out infinite;
+        }
+
+        .coming-soon-wrapper h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .coming-soon-wrapper p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .coming-soon-wrapper p:last-child {
+            margin-bottom: 0;
+        }
+
+        .site-search-box {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto 25px auto;
+        }
+
+        .site-search-box i {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            pointer-events: none;
+        }
+
+        .site-search-box input {
+            width: 100%;
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            padding: 13px 46px 13px 18px;
+            color: var(--text-main);
+            font-family: var(--font-family);
+            font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .site-search-box input:focus {
+            border-color: var(--primary-cyan);
+            box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.15);
+        }
+
+        .site-search-box input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .packs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 10px 0;
+        }
+
+        .pack-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 18px;
+            padding: 30px 15px;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: var(--transition);
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .pack-item i {
+            font-size: 2.5rem;
+            color: var(--primary-cyan);
+        }
+
+        .item-icon-img {
+            width: 46px;
+            height: 46px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .pack-item span {
+            font-size: 0.95rem;
+            font-weight: 500;
+            word-break: break-word;
+        }
+
+        .pack-item-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin: 0;
+            word-break: break-word;
+        }
+
+        .pack-item:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary-cyan);
+            box-shadow: 0 8px 25px rgba(6, 182, 212, 0.25);
+        }
+
+        .pack-detail {
+            max-width: 700px;
+            margin: 0 auto;
+            width: 100%;
+            text-align: center;
+        }
+
+        .pack-detail-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: none;
+            border: 1px solid var(--glass-border);
+            color: var(--text-muted);
+            font-family: var(--font-family);
+            font-size: 0.9rem;
+            padding: 10px 18px;
+            border-radius: 12px;
+            cursor: pointer;
+            margin-bottom: 30px;
+            transition: var(--transition);
+        }
+
+        .pack-detail-back:hover {
+            color: var(--primary-cyan);
+            border-color: var(--primary-cyan);
+        }
+
+        .pack-detail-icon {
+            font-size: 4rem;
+            color: var(--primary-cyan);
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.4));
+        }
+
+        .pack-detail-icon-img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 1px solid var(--glass-border);
+            margin-bottom: 15px;
+            box-shadow: 0 0 25px rgba(6, 182, 212, 0.25);
+        }
+
+        .pack-detail h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: var(--text-main);
+        }
+
+        .pack-download-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .pack-download-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            min-width: 200px;
+            padding: 30px 25px;
+            border-radius: 18px;
+            text-decoration: none;
+            font-family: var(--font-family);
+            font-weight: 700;
+            font-size: 1.1rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            color: var(--text-main);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .pack-download-btn i { font-size: 2.2rem; }
+
+        .pack-download-btn.available {
+            border-color: rgba(6, 182, 212, 0.4);
+        }
+
+        .pack-download-btn.available:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary-cyan);
+            box-shadow: 0 8px 25px rgba(6, 182, 212, 0.25);
+            color: var(--primary-cyan);
+        }
+
+        .pack-download-btn.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .pack-download-btn small {
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: var(--text-muted);
+        }
+
+        .pack-detail-loading {
+            color: var(--text-muted);
+            font-size: 1rem;
+            padding: 40px 0;
+        }
+
+        .empty-search-state {
+            grid-column: 1 / -1;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            padding: 40px 20px;
+        }
+
+        .mod-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 18px;
+            padding: 25px 18px;
+            text-align: center;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        .mod-item:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary-cyan);
+            box-shadow: 0 8px 25px rgba(6, 182, 212, 0.25);
+        }
+
+        .mod-item i.mod-item-icon {
+            font-size: 2.3rem;
+            color: var(--primary-cyan);
+        }
+
+        .mod-item .mod-item-name {
+            font-size: 0.95rem;
+            font-weight: 500;
+            word-break: break-word;
+        }
+
+        .mod-download-btn {
+            margin-top: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 9px 22px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            font-family: var(--font-family);
+            text-decoration: none;
+            border: 1px solid var(--glass-border);
+            background: transparent;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        .mod-download-btn.available {
+            border-color: rgba(6, 182, 212, 0.4);
+            cursor: pointer;
+        }
+
+        .mod-download-btn.available:hover {
+            border-color: var(--primary-cyan);
+            color: var(--primary-cyan);
+            box-shadow: 0 4px 15px rgba(6, 182, 212, 0.25);
+        }
+
+        .mod-download-btn.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .mod-compat-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--primary-cyan);
+            background: rgba(6, 182, 212, 0.12);
+            border: 1px solid rgba(6, 182, 212, 0.35);
+        }
+
+        footer {
+            max-width: 1300px;
+            width: 92%;
+            margin: 0 auto 30px auto;
+            border-radius: 20px;
+            padding: 25px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .footer-rights {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .footer-socials {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .footer-socials a {
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-socials a:hover {
+            color: var(--primary-cyan);
+        }
+
+        @media (max-width: 992px) {
+            header { flex-direction: column; gap: 20px; padding: 20px; }
+            .nav-wrapper { flex-direction: column; gap: 20px; width: 100%; justify-content: center; }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .hero-section h1 { font-size: 2.5rem; }
+            footer { flex-direction: column; gap: 15px; text-align: center; }
+        }
+
+        @media (max-width: 600px) {
+            .cards-grid { grid-template-columns: 1fr; }
+            .card { flex-direction: column; text-align: center; align-items: center; padding: 30px 20px; }
+            .card-title { justify-content: center; }
+            .card-title i { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- لایه‌های زیرین تماماً از ترنسفورم و شتابدهنده سخت افزاری استفاده می‌کنند -->
+    <div class="fixed-bg"></div>
+    <div class="bg-glow"></div>
+
+    <!-- کانتینر لودینگ -->
+    <div id="loader-wrapper">
+        <div class="loader-container">
+            <img src="main.png" alt="پک ایران" class="loader-logo">
+            <h1 class="brand-title">پک ایران</h1>
+            <div class="status-text">در حال آماده‌سازی سیستم</div>
+            <div class="progress-track">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="meta-info">
+                <span>لطفاً منتظر بمانید</span>
+                <span class="percent">0%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- هدر سایت -->
+    <header class="animate-up delay-1">
+        <div class="logo-section">
+            <img src="main.png" alt="پک ایران">
+        </div>
+        <div class="nav-wrapper">
+            <nav>
+                <ul>
+                    <li><a class="nav-link active" data-target="home">صفحه اصلی</a></li>
+                    <li><a class="nav-link" data-target="download">دانلود ماینکرفت</a></li>
+                    <li><a class="nav-link" data-target="resource">ریسورس پک‌ها</a></li>
+                    <li><a class="nav-link" data-target="mods">مود ها</a></li>
+                    <li><a class="nav-link" data-target="shaders">شیدر ها</a></li>
+                    <li><a class="nav-link" data-target="videos">فیلم ها</a></li>
+                    <li><a class="nav-link" data-target="about">درباره ما</a></li>
+                    <li><a class="nav-link" data-target="contact">تماس</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- محتوای اصلی -->
+    <main>
+        
+        <!-- تب ۱: صفحه اصلی -->
+        <div id="home" class="tab-section active-tab animate-up delay-2">
+            <div class="hero-section">
+                <h1>مرجع تخصصی <span>ماینکرفت</span> در ایران</h1>
+                <p>جدیدترین نسخه‌های بازی، بهترین ریسورس پک‌ها، مودها و هر آنچه برای یک تجربه بی‌نظیر در دنیای ماینکرفت نیاز دارید، همه در یک جا.</p>
+            </div>
+
+            <div class="cards-grid">
+                <!-- ساختار جدید کارت‌ها با دایو اختصاصی Glow -->
+                <a href="#" class="card" id="card1" onclick="document.querySelector('.nav-link[data-target=\'download\']').click();">
+                    <div class="card-glow-wrapper"><div class="card-glow"></div></div>
+                    <div class="card-graphic">
+                        <i class="ph ph-game-controller"></i>
+                    </div>
+                    <div class="card-info">
+                        <h2 class="card-title">دانلود بازی <i class="ph-bold ph-arrow-left"></i></h2>
+                        <p class="card-desc">جدیدترین نسخه‌ها و آپدیت‌های رسمی ماینکرفت برای کامپیوتر و موبایل. سریع، امن و با ترافیک نیم‌بها.</p>
+                    </div>
+                </a>
+
+                <a href="#" class="card" id="card2" onclick="document.querySelector('.nav-link[data-target=\'resource\']').click();">
+                    <div class="card-glow-wrapper"><div class="card-glow"></div></div>
+                    <div class="card-graphic">
+                        <i class="ph ph-paint-brush-broad"></i>
+                    </div>
+                    <div class="card-info">
+                        <h2 class="card-title">ریسورس پک‌ها <i class="ph-bold ph-arrow-left"></i></h2>
+                        <p class="card-desc">آرشیو بی‌نظیر از بهترین ریسورس پک‌ها، تکسچرها و شیدرها برای دگرگون کردن گرافیک بازی شما.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- تب ۲: دانلود ماینکرفت -->
+        <div id="download" class="tab-section">
+            <div class="coming-soon-wrapper" id="download-coming-soon">
+                <i class="ph-fill ph-download-simple"></i>
+                <h2>دانلود ماینکرفت</h2>
+                <p>به زودی جدیدترین نسخه‌ها و لینک‌های دانلود ماینکرفت در این قسمت قرار می‌گیرد...</p>
+            </div>
+            <div class="site-search-box" id="download-search-box" style="display:none;">
+                <i class="ph-bold ph-magnifying-glass"></i>
+                <input type="text" id="download-search" placeholder="جستجو بر اساس اسم...">
+            </div>
+            <div class="packs-grid" id="download-list" style="display:none;"></div>
+        </div>
+
+        <!-- تب ۳: ریسورس پک‌ها -->
+        <div id="resource" class="tab-section">
+            <div class="coming-soon-wrapper" id="resource-coming-soon">
+                <i class="ph-fill ph-package"></i>
+                <h2>ریسورس پک‌ها</h2>
+                <p>به زودی آرشیو کامل ریسورس پک‌ها، تکسچرها و مدها در این قسمت قرار می‌گیرد...</p>
+            </div>
+            <div class="site-search-box" id="resource-search-box" style="display:none;">
+                <i class="ph-bold ph-magnifying-glass"></i>
+                <input type="text" id="resource-search" placeholder="جستجو بر اساس اسم...">
+            </div>
+            <div class="packs-grid" id="resource-packs-list" style="display:none;"></div>
+            <div class="pack-detail" id="resource-pack-detail" style="display:none;"></div>
+        </div>
+
+        <!-- تب ۴: مود ها -->
+        <div id="mods" class="tab-section">
+            <div class="coming-soon-wrapper" id="mods-coming-soon">
+                <i class="ph-fill ph-puzzle-piece"></i>
+                <h2>مود ها</h2>
+                <p>به زودی</p>
+            </div>
+            <div class="site-search-box" id="mods-search-box" style="display:none;">
+                <i class="ph-bold ph-magnifying-glass"></i>
+                <input type="text" id="mods-search" placeholder="جستجو بر اساس اسم...">
+            </div>
+            <div class="packs-grid" id="mods-list" style="display:none;"></div>
+        </div>
+
+        <!-- تب ۵: شیدر ها -->
+        <div id="shaders" class="tab-section">
+            <div class="coming-soon-wrapper" id="shaders-coming-soon">
+                <i class="ph-fill ph-sparkle"></i>
+                <h2>شیدر ها</h2>
+                <p>به زودی</p>
+            </div>
+            <div class="site-search-box" id="shaders-search-box" style="display:none;">
+                <i class="ph-bold ph-magnifying-glass"></i>
+                <input type="text" id="shaders-search" placeholder="جستجو بر اساس اسم...">
+            </div>
+            <div class="packs-grid" id="shaders-list" style="display:none;"></div>
+        </div>
+
+        <!-- تب ۶: فیلم ها -->
+        <div id="videos" class="tab-section">
+            <div class="coming-soon-wrapper" id="videos-coming-soon">
+                <i class="ph-fill ph-video-camera"></i>
+                <h2>فیلم ها</h2>
+                <p>به زودی</p>
+            </div>
+            <div class="site-search-box" id="videos-search-box" style="display:none;">
+                <i class="ph-bold ph-magnifying-glass"></i>
+                <input type="text" id="videos-search" placeholder="جستجو بر اساس اسم...">
+            </div>
+            <div class="packs-grid" id="videos-list" style="display:none;"></div>
+        </div>
+
+        <!-- تب ۷: درباره ما -->
+        <div id="about" class="tab-section">
+            <div class="coming-soon-wrapper">
+                <i class="ph-fill ph-users-three"></i>
+                <h2>درباره ما</h2>
+                <p>
+                    «پک ایران» حاصل تلاش تیمی کوچک از برنامه‌نویسان حرفه‌ای است که با علاقه‌ی واقعی به دنیای ماینکرفت شکل گرفته؛
+                    جایی که تخصص فنی در کنار عشق به بازی، یک هدف مشترک را دنبال می‌کند: ساده‌تر، سریع‌تر و لذت‌بخش‌تر کردن تجربه‌ی بازی برای هر کاربر ایرانی.
+                </p>
+                <p>
+                    به‌جای جست‌وجو در ده‌ها منبع پراکنده و نامطمئن، همه‌چیز را یک‌جا، مرتب و رایگان در اختیار شما قرار می‌دهیم:
+                    ریسورس پک‌های اختصاصی، مودهای کاربردی، شیدرهای چشم‌نواز و محتوای ویدیویی — همگی برای هر دو نسخه‌ی جاوا و بدراک.
+                </p>
+                <p>
+                    تیم ما با دقت روی کیفیت، سرعت دانلود و امنیت فایل‌ها کار می‌کند تا خیالتان از این بابت راحت باشد.
+                    این پلتفرم هنوز در مسیر رشد است و هر روز با امکانات و محتوای تازه‌تری به‌روزرسانی می‌شود.
+                </p>
+                <p>
+                    اگر پیشنهاد، انتقاد یا ایده‌ای برای بهتر شدن «پک ایران» دارید، خوشحال می‌شویم صدای شما را بشنویم —
+                    چون این پلتفرم برای شماست و با همراهی شما بهتر می‌شود.
+                </p>
+            </div>
+        </div>
+
+        <!-- تب ۸: تماس -->
+        <div id="contact" class="tab-section">
+            <div class="coming-soon-wrapper">
+                <i class="ph-fill ph-envelope-simple-open"></i>
+                <h2>تماس با ما</h2>
+                <p>به زودی راه‌های ارتباطی و فرم تماس در این قسمت قرار می‌گیرد...</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- فوتر -->
+    <footer class="animate-up delay-3">
+        <div class="footer-rights">
+            تمامی حقوق برای <strong>پک ایران</strong> محفوظ است - ۱۴۰۵
+        </div>
+    </footer>
+
+    <!-- اسکریپت‌ها -->
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const loaderWrapper = document.getElementById('loader-wrapper');
+            const progressFill = document.querySelector('.progress-fill');
+            const percentText = document.querySelector('.percent');
+            let progress = 0;
+            
+            function simulateLoading() {
+                let increment = Math.floor(Math.random() * 3) + 1; 
+                progress += increment;
+                
+                if (progress >= 100) {
+                    progress = 100;
+                    progressFill.style.width = '100%';
+                    percentText.textContent = '100%';
+                    
+                    setTimeout(() => {
+                        loaderWrapper.classList.add('loader-hidden');
+                    }, 500);
+                } else {
+                    progressFill.style.width = progress + '%';
+                    percentText.textContent = progress + '%';
+                    
+                    let nextTick = Math.floor(Math.random() * 60) + 30;
+                    setTimeout(simulateLoading, nextTick);
+                }
+            }
+            setTimeout(simulateLoading, 300);
+        });
+
+        const navLinks = document.querySelectorAll('.nav-link');
+        const tabSections = document.querySelectorAll('.tab-section');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('data-target');
+                
+                if(targetId) {
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    document.querySelectorAll(`.nav-link[data-target="${targetId}"]`).forEach(l => l.classList.add('active'));
+
+                    tabSections.forEach(section => {
+                        section.classList.remove('active-tab');
+                    });
+
+                    const targetSection = document.getElementById(targetId);
+                    if(targetSection) {
+                        targetSection.classList.add('active-tab');
+                    }
+                }
+            });
+        });
+
+        // ===== آدرس بک‌اند روی Railway =====
+        // این آدرس رو با آدرس واقعی بک‌اندت (بعد از دیپلوی روی Railway) جایگزین کن.
+        // مثال: 'https://packiran-backend-production.up.railway.app'
+        const API_BASE = 'https://web-production-b6b4a.up.railway.app'; // فقط برای ورود/ثبت‌نام کاربر و پنل ادمین استفاده می‌شه
+
+        // ===== گرفتن اطلاعات سایت (پک/مود/شیدر/فیلم) با کش ۱ ساعته توی مرورگر =====
+        // این اطلاعات مستقیم از فایل packs-data.json که کنار همین index.html روی
+        // گیت‌هاب پیجزه خونده می‌شه، نه از Railway — چون Railway ممکنه برای بعضی
+        // کاربرها فیلتر باشه، ولی خودِ گیت‌هاب فیلتر نیست. این فایل رو بک‌اند
+        // (روی Railway) هر ۱ ساعت یکبار، و همچنین بعد از هر تغییر توی پنل ادمین،
+        // خودش می‌سازه/به‌روز می‌کنه و مستقیم توی همین مخزن کامیت می‌کنه.
+        const SITE_DATA_CACHE_KEY = 'siteDataCache_v1';
+        const SITE_DATA_CACHE_TTL = 60 * 60 * 1000; // ۱ ساعت
+        let siteDataPendingPromise = null;
+
+        function getSiteData() {
+            try {
+                const raw = localStorage.getItem(SITE_DATA_CACHE_KEY);
+                if (raw) {
+                    const parsed = JSON.parse(raw);
+                    if (parsed.timestamp && (Date.now() - parsed.timestamp) < SITE_DATA_CACHE_TTL) {
+                        return Promise.resolve(parsed.data);
+                    }
+                }
+            } catch (e) {
+                // کش خراب بود، نادیده می‌گیریم و از سرور می‌گیریم
+            }
+
+            // اگه همین الان یه درخواست دیگه در حال رفتنه، منتظرش می‌مونیم
+            // (تا ۴ بخش سایت هم‌زمان ۴ تا درخواست جدا نزنن)
+            if (siteDataPendingPromise) return siteDataPendingPromise;
+
+            siteDataPendingPromise = fetch('packs-data.json', { cache: 'no-store' })
+                .then(res => {
+                    if (!res.ok) throw new Error('خطا در دریافت اطلاعات از فایل packs-data.json');
+                    return res.json();
+                })
+                .then(data => {
+                    try {
+                        localStorage.setItem(SITE_DATA_CACHE_KEY, JSON.stringify({ timestamp: Date.now(), data }));
+                    } catch (e) {
+                        // localStorage پر یا غیرفعال بود، مشکلی نیست
+                    }
+                    return data;
+                })
+                .catch(err => {
+                    // اگه درخواست شکست خورد، حتی یه کش قدیمی (منقضی‌شده) بهتر از هیچیه
+                    try {
+                        const raw = localStorage.getItem(SITE_DATA_CACHE_KEY);
+                        if (raw) {
+                            const parsed = JSON.parse(raw);
+                            if (parsed && parsed.data) return parsed.data;
+                        }
+                    } catch (e2) { /* کاری نمی‌شه کرد */ }
+                    throw err;
+                })
+                .finally(() => {
+                    siteDataPendingPromise = null;
+                });
+
+            return siteDataPendingPromise;
+        }
+
+        // تابع مشترک: اگه آیتم آیکون آپلود‌شده داشت تصویرش رو نشون بده، وگرنه آیکون پیش‌فرض
+        function renderItemIcon(item, fallbackIconClass) {
+            if (item && item.icon) {
+                return `<img src="${item.icon}" alt="" class="item-icon-img" loading="lazy">`;
+            }
+            return `<i class="ph-fill ${fallbackIconClass}"></i>`;
+        }
+
+        // ===== سیستم پک‌ها: اطلاعات رو مستقیم از بک‌اند (Railway) می‌گیره =====
+        (function packSystem() {
+            const comingSoon = document.getElementById('resource-coming-soon');
+            const listWrapper = document.getElementById('resource-packs-list');
+            const detailWrapper = document.getElementById('resource-pack-detail');
+            const searchBox = document.getElementById('resource-search-box');
+            const searchInput = document.getElementById('resource-search');
+            if (!comingSoon || !listWrapper || !detailWrapper) return;
+
+            let allPacks = [];
+
+            // نمایش صفحه جزئیات یک پک با دو دکمه دانلود جاوا / بدراک
+            function openPackDetail(pack) {
+                listWrapper.style.display = 'none';
+                detailWrapper.style.display = 'block';
+                detailWrapper.innerHTML = `
+                    <button class="pack-detail-back" id="pack-back-btn">
+                        <i class="ph-bold ph-arrow-right"></i> بازگشت به لیست پک‌ها
+                    </button>
+                    <div>
+                        ${pack.icon
+                            ? `<img src="${pack.icon}" alt="" class="pack-detail-icon-img">`
+                            : `<i class="ph-fill ph-package pack-detail-icon"></i>`
+                        }
+                        <h2>${escapeHtml(pack.name)}</h2>
+                    </div>
+                    <div class="pack-download-buttons">
+                        ${pack.java
+                            ? `<a href="${pack.java}" class="pack-download-btn available"><i class="ph-fill ph-cube"></i> دانلود جاوا</a>`
+                            : `<div class="pack-download-btn disabled"><i class="ph-fill ph-cube"></i> دانلود جاوا<small>به زودی</small></div>`
+                        }
+                        ${pack.bedrock
+                            ? `<a href="${pack.bedrock}" class="pack-download-btn available"><i class="ph-fill ph-cube-transparent"></i> دانلود بدراک</a>`
+                            : `<div class="pack-download-btn disabled"><i class="ph-fill ph-cube-transparent"></i> دانلود بدراک<small>به زودی</small></div>`
+                        }
+                    </div>
+                `;
+
+                document.getElementById('pack-back-btn').addEventListener('click', () => {
+                    detailWrapper.style.display = 'none';
+                    listWrapper.style.display = 'grid';
+                });
+            }
+
+            // جلوگیری از اجرای کد HTML داخل متن (چون از فایل txt کاربر میاد)
+            function escapeHtml(str) {
+                const div = document.createElement('div');
+                div.textContent = str;
+                return div.innerHTML;
+            }
+
+            // رندر لیست کارت‌های پک
+            function renderPackList(packs) {
+                if (packs.length === 0) {
+                    listWrapper.innerHTML = '<div class="empty-search-state">چیزی با این اسم پیدا نشد</div>';
+                    return;
+                }
+                listWrapper.innerHTML = packs.map(pack => `
+                    <div class="pack-item" data-pack="${escapeHtml(pack.name)}">
+                        ${renderItemIcon(pack, 'ph-folder')}
+                        <span>${escapeHtml(pack.name)}</span>
+                        ${pack.description ? `<p class="pack-item-desc">${escapeHtml(pack.description)}</p>` : ''}
+                    </div>
+                `).join('');
+
+                listWrapper.querySelectorAll('.pack-item').forEach(el => {
+                    const pack = packs.find(p => p.name === el.getAttribute('data-pack'));
+                    el.addEventListener('click', () => openPackDetail(pack));
+                });
+            }
+
+            if (searchInput) {
+                searchInput.addEventListener('input', () => {
+                    const q = searchInput.value.trim().toLowerCase();
+                    const filtered = q ? allPacks.filter(p => p.name.toLowerCase().includes(q)) : allPacks;
+                    renderPackList(filtered);
+                });
+            }
+
+            // خوندن فایل استاتیکی که ربات ساخته (کنار همین index.html)
+            getSiteData()
+                .then(data => {
+                    const packs = Array.isArray(data.packs) ? data.packs : [];
+                    if (packs.length === 0) return; // «به زودی» همونطور می‌مونه
+                    allPacks = packs;
+                    comingSoon.style.display = 'none';
+                    listWrapper.style.display = 'grid';
+                    if (searchBox) searchBox.style.display = 'block';
+                    renderPackList(packs);
+                })
+                .catch(() => {
+                    // فایل هنوز وجود نداره (مثلاً ربات هنوز اولین بار اجرا نشده) -> «به زودی» می‌مونه
+                });
+        })();
+
+        // ===== سیستم مود ها: اطلاعات رو مستقیم از بک‌اند (Railway) می‌گیره =====
+        (function modSystem() {
+            const comingSoon = document.getElementById('mods-coming-soon');
+            const listWrapper = document.getElementById('mods-list');
+            const searchBox = document.getElementById('mods-search-box');
+            const searchInput = document.getElementById('mods-search');
+            if (!comingSoon || !listWrapper) return;
+
+            let allMods = [];
+
+            function escapeHtml(str) {
+                const div = document.createElement('div');
+                div.textContent = str;
+                return div.innerHTML;
+            }
+
+            function renderModList(mods) {
+                if (mods.length === 0) {
+                    listWrapper.innerHTML = '<div class="empty-search-state">چیزی با این اسم پیدا نشد</div>';
+                    return;
+                }
+                listWrapper.innerHTML = mods.map(mod => `
+                    <div class="mod-item">
+                        ${renderItemIcon(mod, 'ph-puzzle-piece mod-item-icon')}
+                        <span class="mod-item-name">${escapeHtml(mod.name)}</span>
+                        ${mod.compatibility ? `<span class="mod-compat-badge">${escapeHtml(mod.compatibility)}</span>` : ''}
+                        ${mod.description ? `<p class="pack-item-desc">${escapeHtml(mod.description)}</p>` : ''}
+                        ${mod.file
+                            ? `<a href="${mod.file}" class="mod-download-btn available"><i class="ph-fill ph-download-simple"></i> دانلود</a>`
+                            : `<div class="mod-download-btn disabled"><i class="ph-fill ph-download-simple"></i> به زودی</div>`
+                        }
+                    </div>
+                `).join('');
+            }
+
+            if (searchInput) {
+                searchInput.addEventListener('input', () => {
+                    const q = searchInput.value.trim().toLowerCase();
+                    const filtered = q ? allMods.filter(m => m.name.toLowerCase().includes(q)) : allMods;
+                    renderModList(filtered);
+                });
+            }
+
+            getSiteData()
+                .then(data => {
+                    const mods = Array.isArray(data.mods) ? data.mods : [];
+                    if (mods.length === 0) return; // «به زودی» همونطور می‌مونه
+                    allMods = mods;
+                    comingSoon.style.display = 'none';
+                    listWrapper.style.display = 'grid';
+                    if (searchBox) searchBox.style.display = 'block';
+                    renderModList(mods);
+                })
+                .catch(() => {
+                    // فایل هنوز وجود نداره یا پوشه Mod نیست -> «به زودی» می‌مونه
+                });
+        })();
+
+        // ===== سیستم دانلود ماینکرفت: اطلاعات رو مستقیم از بک‌اند (Railway) می‌گیره =====
+        (function downloadSystem() {
+            const comingSoon = document.getElementById('download-coming-soon');
+            const listWrapper = document.getElementById('download-list');
+            const searchBox = document.getElementById('download-search-box');
+            const searchInput = document.getElementById('download-search');
+            if (!comingSoon || !listWrapper) return;
+
+            let allDownloads = [];
+
+            function escapeHtml(str) {
+                const div = document.createElement('div');
+                div.textContent = str;
+                return div.innerHTML;
+            }
+
+            function renderDownloadList(downloads) {
+                if (downloads.length === 0) {
+                    listWrapper.innerHTML = '<div class="empty-search-state">چیزی با این اسم پیدا نشد</div>';
+                    return;
+                }
+                listWrapper.innerHTML = downloads.map(item => `
+                    <div class="mod-item">
+                        ${renderItemIcon(item, 'ph-download-simple mod-item-icon')}
+                        <span class="mod-item-name">${escapeHtml(item.name)}</span>
+                        ${item.description ? `<p class="pack-item-desc">${escapeHtml(item.description)}</p>` : ''}
+                        ${item.file
+                            ? `<a href="${item.file}" class="mod-download-btn available"><i class="ph-fill ph-download-simple"></i> دانلود</a>`
+                            : `<div class="mod-download-btn disabled"><i class="ph-fill ph-download-simple"></i> به زودی</div>`
+                        }
+                    </div>
+                `).join('');
+            }
+
+            if (searchInput) {
+                searchInput.addEventListener('input', () => {
+                    const q = searchInput.value.trim().toLowerCase();
+                    const filtered = q ? allDownloads.filter(d => d.name.toLowerCase().includes(q)) : allDownloads;
+                    renderDownloadList(filtered);
+                });
+            }
+
+            getSiteData()
+                .then(data => {
+                    const downloads = Array.isArray(data.downloads) ? data.downloads : [];
+                    if (downloads.length === 0) return; // «به زودی» همونطور می‌مونه
+                    allDownloads = downloads;
+                    comingSoon.style.display = 'none';
+                    listWrapper.style.display = 'grid';
+                    if (searchBox) searchBox.style.display = 'block';
+                    renderDownloadList(downloads);
+                })
+                .catch(() => {
+                    // فایل هنوز وجود نداره یا پوشه Download نیست -> «به زودی» می‌مونه
+                });
+        })();
+
+        // ===== سیستم شیدر ها: اطلاعات رو مستقیم از بک‌اند (Railway) می‌گیره =====
+        (function shaderSystem() {
+            const comingSoon = document.getElementById('shaders-coming-soon');
+            const listWrapper = document.getElementById('shaders-list');
+            const searchBox = document.getElementById('shaders-search-box');
+            const searchInput = document.getElementById('shaders-search');
+            if (!comingSoon || !listWrapper) return;
+
+            let allShaders = [];
+
+            function escapeHtml(str) {
+                const div = document.createElement('div');
+                div.textContent = str;
+                return div.innerHTML;
+            }
+
+            function renderShaderList(shaders) {
+                if (shaders.length === 0) {
+                    listWrapper.innerHTML = '<div class="empty-search-state">چیزی با این اسم پیدا نشد</div>';
+                    return;
+                }
+                listWrapper.innerHTML = shaders.map(shader => `
+                    <div class="mod-item">
+                        ${renderItemIcon(shader, 'ph-sparkle mod-item-icon')}
+                        <span class="mod-item-name">${escapeHtml(shader.name)}</span>
+                        ${shader.compatibility ? `<span class="mod-compat-badge">${escapeHtml(shader.compatibility)}</span>` : ''}
+                        ${shader.description ? `<p class="pack-item-desc">${escapeHtml(shader.description)}</p>` : ''}
+                        ${shader.file
+                            ? `<a href="${shader.file}" class="mod-download-btn available"><i class="ph-fill ph-download-simple"></i> دانلود</a>`
+                            : `<div class="mod-download-btn disabled"><i class="ph-fill ph-download-simple"></i> به زودی</div>`
+                        }
+                    </div>
+                `).join('');
+            }
+
+            if (searchInput) {
+                searchInput.addEventListener('input', () => {
+                    const q = searchInput.value.trim().toLowerCase();
+                    const filtered = q ? allShaders.filter(s => s.name.toLowerCase().includes(q)) : allShaders;
+                    renderShaderList(filtered);
+                });
+            }
+
+            getSiteData()
+                .then(data => {
+                    const shaders = Array.isArray(data.shaders) ? data.shaders : [];
+                    if (shaders.length === 0) return; // «به زودی» همونطور می‌مونه
+                    allShaders = shaders;
+                    comingSoon.style.display = 'none';
+                    listWrapper.style.display = 'grid';
+                    if (searchBox) searchBox.style.display = 'block';
+                    renderShaderList(shaders);
+                })
+                .catch(() => {
+                    // فایل هنوز وجود نداره یا پوشه Shader نیست -> «به زودی» می‌مونه
+                });
+        })();
+
+        // ===== سیستم فیلم ها: اطلاعات رو مستقیم از بک‌اند (Railway) می‌گیره =====
+        (function filmSystem() {
+            const comingSoon = document.getElementById('videos-coming-soon');
+            const listWrapper = document.getElementById('videos-list');
+            const searchBox = document.getElementById('videos-search-box');
+            const searchInput = document.getElementById('videos-search');
+            if (!comingSoon || !listWrapper) return;
+
+            let allFilms = [];
+
+            function escapeHtml(str) {
+                const div = document.createElement('div');
+                div.textContent = str;
+                return div.innerHTML;
+            }
+
+            function renderFilmList(films) {
+                if (films.length === 0) {
+                    listWrapper.innerHTML = '<div class="empty-search-state">چیزی با این اسم پیدا نشد</div>';
+                    return;
+                }
+                listWrapper.innerHTML = films.map(film => `
+                    <div class="mod-item">
+                        ${renderItemIcon(film, 'ph-video-camera mod-item-icon')}
+                        <span class="mod-item-name">${escapeHtml(film.name)}</span>
+                        ${film.description ? `<p class="pack-item-desc">${escapeHtml(film.description)}</p>` : ''}
+                        ${film.link
+                            ? `<a href="${escapeHtml(film.link)}" target="_blank" rel="noopener" class="mod-download-btn available"><i class="ph-fill ph-play-circle"></i> مشاهده فیلم</a>`
+                            : `<div class="mod-download-btn disabled"><i class="ph-fill ph-play-circle"></i> به زودی</div>`
+                        }
+                    </div>
+                `).join('');
+            }
+
+            if (searchInput) {
+                searchInput.addEventListener('input', () => {
+                    const q = searchInput.value.trim().toLowerCase();
+                    const filtered = q ? allFilms.filter(f => f.name.toLowerCase().includes(q)) : allFilms;
+                    renderFilmList(filtered);
+                });
+            }
+
+            getSiteData()
+                .then(data => {
+                    const films = Array.isArray(data.films) ? data.films : [];
+                    if (films.length === 0) return; // «به زودی» همونطور می‌مونه
+                    allFilms = films;
+                    comingSoon.style.display = 'none';
+                    listWrapper.style.display = 'grid';
+                    if (searchBox) searchBox.style.display = 'block';
+                    renderFilmList(films);
+                })
+                .catch(() => {
+                    // فایل هنوز وجود نداره یا پوشه Film نیست -> «به زودی» می‌مونه
+                });
+        })();
+
+        // رندرینگ ۱۰۰٪ مبتنی بر GPU (حذف کامل Paint Trigger ها)
+        const cards = document.querySelectorAll('.card');
+        
+        cards.forEach(card => {
+            let rect;
+            const glow = card.querySelector('.card-glow');
+            
+            // ذخیره ابعاد صرفا هنگام ورود به کارت
+            card.addEventListener('mouseenter', () => {
+                rect = card.getBoundingClientRect();
+            });
+
+            card.addEventListener('mousemove', e => {
+                if (!rect || !glow) return;
+
+                // واگذاری جابجایی پیکسل‌ها به لایه کامپوزیت گرافیک توسط translate3d
+                window.requestAnimationFrame(() => {
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    glow.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
