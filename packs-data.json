@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-20T06:07:26Z",
+  "updatedAt": "2026-07-20T06:10:15Z",
   "packs": [
     {
       "name": "Akatsuki",
@@ -90,6 +90,12 @@
     {
       "name": "تبدیل روستا به شهر",
       "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/تبدیل روستا به شهر/File/Village%20Cities%20Add-On%20(addon).mcaddon",
+      "description": "بدراک 1.20 به بالا",
+      "compatibility": "سازگار بدراک"
+    },
+    {
+      "name": "مود انواع آیرون گولم",
+      "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/مود انواع آیرون گولم/File/Golem%20Mania%20Add-On.mcaddon",
       "description": "بدراک 1.20 به بالا",
       "compatibility": "سازگار بدراک"
     },
