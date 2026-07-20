@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-20T12:07:28Z",
+  "updatedAt": "2026-07-20T12:09:10Z",
   "packs": [
     {
       "name": "4sangre",
@@ -92,7 +92,7 @@
       "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/Lucky-SkyBlock/File/Lucky%20BlockSkyblock%20(1).mctemplate",
       "description": "بدراک 1.20 به بالا",
       "compatibility": "سازگار بدراک",
-      "icon": null
+      "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/Lucky-SkyBlock/com.StusioCraftStudio.LuckySkyBlock_444bdf4d-51f9-4afd-812e-53235a2ab064.png"
     },
     {
       "name": "انواع اژدها",
