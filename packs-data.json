@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-20T15:35:41Z",
+  "updatedAt": "2026-07-20T15:41:20Z",
   "packs": [
     {
       "name": "4sangre",
@@ -107,6 +107,13 @@
       "description": "بدراک 1.20 به بالا",
       "compatibility": "سازگار بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/انواع ماب های ترسناک جهش یافته برای/IMG_20260720_153555_209.jpg"
+    },
+    {
+      "name": "انواع کریپر",
+      "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/انواع کریپر/File/Creeper%20Expansion.mcaddon",
+      "description": "بدراک 1.21.40 به بالا",
+      "compatibility": "سازگار بدراک",
+      "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/انواع کریپر/photo_2024-12-14_19-40-18.jpg"
     },
     {
       "name": "اکشن اند استاف نسخه 1.11 (جدید ترین نسخه )",
