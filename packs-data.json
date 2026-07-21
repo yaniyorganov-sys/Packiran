@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-21T11:33:51Z",
+  "updatedAt": "2026-07-21T11:37:25Z",
   "packs": [
     {
       "name": "4sangre",
@@ -161,7 +161,7 @@
       "description": "بدراک 1.26.30 به بالا",
       "compatibility": "سازگار بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/اکشن اند استاف نسخه 1.11 (جدید ترین نسخه )/70890379-6537-l__2672.jpg",
-      "tested": false
+      "tested": true
     },
     {
       "name": "بوگاتی ویرون",
