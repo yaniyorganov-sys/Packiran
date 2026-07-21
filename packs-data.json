@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-21T10:47:24Z",
+  "updatedAt": "2026-07-21T10:48:24Z",
   "packs": [
     {
       "name": "4sangre",
@@ -313,6 +313,14 @@
       "description": "بدراک 1.20 به بالا",
       "compatibility": "سازگار بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/وان بلاک هاردکور/IMG_20260720_152011_850.jpg",
+      "tested": false
+    },
+    {
+      "name": "پختن آور ها در کمپ فایر",
+      "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/پختن آور ها در کمپ فایر/File/823_6589582848947(1).mcaddon",
+      "description": null,
+      "compatibility": "سازگار با بدراک",
+      "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/پختن آور ها در کمپ فایر/photo_2026-07-21_14-17-46.jpg",
       "tested": false
     },
     {
