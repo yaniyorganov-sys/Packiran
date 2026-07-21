@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-21T10:48:24Z",
+  "updatedAt": "2026-07-21T10:51:01Z",
   "packs": [
     {
       "name": "4sangre",
@@ -225,6 +225,14 @@
       "description": "نسخه  1.21.120.20 به بالا",
       "compatibility": "سازگار با بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/ماشین بی ام و/photo_2026-07-21_14-12-47.jpg",
+      "tested": false
+    },
+    {
+      "name": "ماشین سمند سورن",
+      "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/ماشین سمند سورن/File/Ikco%20soren%20Bedrock(1)(1).mcaddon",
+      "description": null,
+      "compatibility": "سازگار با بدراک",
+      "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/ماشین سمند سورن/photo_2026-07-21_14-19-12.jpg",
       "tested": false
     },
     {
