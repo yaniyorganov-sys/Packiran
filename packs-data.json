@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-21T07:14:09Z",
+  "updatedAt": "2026-07-21T07:17:55Z",
   "packs": [
     {
       "name": "4sangre",
@@ -205,10 +205,10 @@
     },
     {
       "name": "هواپیما و هلیکوپتر",
-      "file": null,
+      "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/هواپیما و هلیکوپتر/File/Airplanes%20Add-On.mcaddon",
       "description": "نسخه 1.20 به بالا",
-      "compatibility": null,
-      "icon": null,
+      "compatibility": "سازگار با بدراک",
+      "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/هواپیما و هلیکوپتر/photo_2026-07-21_10-43-02.jpg",
       "tested": false
     },
     {
