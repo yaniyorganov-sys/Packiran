@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-21T07:21:23Z",
+  "updatedAt": "2026-07-21T07:24:08Z",
   "packs": [
     {
       "name": "4sangre",
@@ -145,6 +145,14 @@
       "description": "بدراک 1.20 به بالا",
       "compatibility": "سازگار بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/تبدیل روستا به شهر/IMG_20260720_152029_158.jpg",
+      "tested": false
+    },
+    {
+      "name": "ساخت اتاق گیمینگ و وسایل گیمینگ",
+      "file": null,
+      "description": null,
+      "compatibility": null,
+      "icon": null,
       "tested": false
     },
     {
