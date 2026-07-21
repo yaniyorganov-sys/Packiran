@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-21T11:50:14Z",
+  "updatedAt": "2026-07-21T12:00:33Z",
   "packs": [
     {
       "name": "4sangre",
@@ -330,6 +330,14 @@
       "compatibility": "سازگار بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/مپ وان بلاک/IMG_20260720_152011_850.jpg",
       "tested": false
+    },
+    {
+      "name": "هاردکور در سرزمین اژدهایان",
+      "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/هاردکور در سرزمین اژدهایان/File/HARDCORE%20Dragon%20World.mctemplate",
+      "description": "بدراک 1.20 به بالا",
+      "compatibility": "سازگار بدراک",
+      "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/هاردکور در سرزمین اژدهایان/maxresdefault.jpg",
+      "tested": true
     },
     {
       "name": "هواپیما و هلیکوپتر",
