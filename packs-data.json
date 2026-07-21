@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-21T10:14:18Z",
+  "updatedAt": "2026-07-21T10:21:34Z",
   "packs": [
     {
       "name": "4sangre",
@@ -145,6 +145,14 @@
       "description": "بدراک 1.20 به بالا",
       "compatibility": "سازگار بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/تبدیل روستا به شهر/IMG_20260720_152029_158.jpg",
+      "tested": false
+    },
+    {
+      "name": "دستگاه های ردستونی پیشرفته",
+      "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/دستگاه های ردستونی پیشرفته/File/Redstone%201.1%20Add-On%20by%20skupka%20(1).mcaddon",
+      "description": "نسخه 1.12به بالا",
+      "compatibility": "سازگار با بدراک",
+      "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/دستگاه های ردستونی پیشرفته/photo_2026-07-21_13-46-19.jpg",
       "tested": false
     },
     {
