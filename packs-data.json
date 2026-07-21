@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-21T10:24:27Z",
+  "updatedAt": "2026-07-21T10:29:04Z",
   "packs": [
     {
       "name": "4sangre",
@@ -161,6 +161,14 @@
       "description": "نسخه 1.20 به بالا",
       "compatibility": "سازگار با بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/ساخت اتاق گیمینگ و وسایل گیمینگ/photo_2026-07-21_10-50-00.jpg",
+      "tested": false
+    },
+    {
+      "name": "لوازم خانگی",
+      "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/لوازم خانگی/File/Furniture 1200+ 1.5 Add-On.mcaddon",
+      "description": "نسخه 1.20 به بالا",
+      "compatibility": "سازگار با بدراک",
+      "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/لوازم خانگی/photo_2026-07-21_13-55-12.jpg",
       "tested": false
     },
     {
