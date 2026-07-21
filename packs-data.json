@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-21T10:40:09Z",
+  "updatedAt": "2026-07-21T10:41:53Z",
   "packs": [
     {
       "name": "4sangre",
@@ -177,6 +177,14 @@
       "description": null,
       "compatibility": "سازگار با بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/تفنگ لیزری/photo_2026-07-21_14-03-47.jpg",
+      "tested": false
+    },
+    {
+      "name": "جت پک",
+      "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/جت پک/File/Jetpacks%20Add-On%20by%20skupka(3).mcaddon",
+      "description": "نسخه  1.21.120.20 به بالا",
+      "compatibility": "سازگار با بدراک",
+      "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/جت پک/photo_2026-07-21_14-10-16.jpg",
       "tested": false
     },
     {
