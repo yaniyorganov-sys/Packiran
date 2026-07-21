@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-21T10:35:55Z",
+  "updatedAt": "2026-07-21T10:37:35Z",
   "packs": [
     {
       "name": "4sangre",
@@ -145,6 +145,14 @@
       "description": "بدراک 1.26.30 به بالا",
       "compatibility": "سازگار بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/اکشن اند استاف نسخه 1.11 (جدید ترین نسخه )/70890379-6537-l__2672.jpg",
+      "tested": false
+    },
+    {
+      "name": "بوگاتی ویرون",
+      "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/بوگاتی ویرون/File/Bugatti-Veyron-Addon-MCPE-1.21.mcaddon",
+      "description": "نسخه  1.21.120.20 به بالا",
+      "compatibility": "سازگار با بدراک",
+      "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/بوگاتی ویرون/photo_2026-07-21_14-06-22.jpg",
       "tested": false
     },
     {
