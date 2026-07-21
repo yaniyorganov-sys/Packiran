@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-21T10:52:22Z",
+  "updatedAt": "2026-07-21T10:55:46Z",
   "packs": [
     {
       "name": "4sangre",
@@ -105,6 +105,14 @@
       "description": "بدراک 1.20 به بالا",
       "compatibility": "سازگار بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/Lucky-SkyBlock/com.StusioCraftStudio.LuckySkyBlock_444bdf4d-51f9-4afd-812e-53235a2ab064.png",
+      "tested": false
+    },
+    {
+      "name": "آیرون من",
+      "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/آیرون من/File/Iron%20Man%20Add-on(1)(1).mcaddon",
+      "description": null,
+      "compatibility": "سازگار با بدراک",
+      "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/آیرون من/photo_2026-07-21_14-23-46.jpg",
       "tested": false
     },
     {
