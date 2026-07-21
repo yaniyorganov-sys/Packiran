@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-21T10:21:34Z",
+  "updatedAt": "2026-07-21T10:24:27Z",
   "packs": [
     {
       "name": "4sangre",
@@ -161,6 +161,14 @@
       "description": "نسخه 1.20 به بالا",
       "compatibility": "سازگار با بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/ساخت اتاق گیمینگ و وسایل گیمینگ/photo_2026-07-21_10-50-00.jpg",
+      "tested": false
+    },
+    {
+      "name": "ماشین 405",
+      "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/ماشین 405/File/4_5909108725590793559.mcaddon",
+      "description": null,
+      "compatibility": "سازگار با بدراک",
+      "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/ماشین 405/photo_2026-07-21_13-52-48.jpg",
       "tested": false
     },
     {
