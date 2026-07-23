@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-23T05:28:22Z",
+  "updatedAt": "2026-07-23T05:31:41Z",
   "packs": [
     {
       "name": "4sangre",
@@ -250,6 +250,14 @@
       "compatibility": "سازگار با بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/ماشین سمند سورن/photo_2026-07-21_14-19-12.jpg",
       "tested": false
+    },
+    {
+      "name": "ماشین های سوپر کارز",
+      "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/ماشین های سوپر کارز/File/Supercars%20Add-On%20by%20sneypmc.mcaddon",
+      "description": "نسخه 1.12به بالا",
+      "compatibility": "سازگار با بدراک",
+      "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/ماشین های سوپر کارز/photo_2026-07-23_08-59-51.jpg",
+      "tested": true
     },
     {
       "name": "ماشین پژو پارس",
