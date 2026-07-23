@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-23T05:05:43Z",
+  "updatedAt": "2026-07-23T05:18:17Z",
   "packs": [
     {
       "name": "4sangre",
@@ -346,6 +346,14 @@
       "compatibility": "سازگار بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/مپ وان بلاک/IMG_20260720_152011_850.jpg",
       "tested": false
+    },
+    {
+      "name": "مینی بلاک",
+      "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/مینی بلاک/File/Mini%20Blocks%20Add-On%20by%20skupka.mcaddon",
+      "description": "نسخه 1.12به بالا",
+      "compatibility": "سازگار با بدراک",
+      "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/مینی بلاک/photo_2026-07-23_08-47-35.jpg",
+      "tested": true
     },
     {
       "name": "هاردکور در سرزمین اژدهایان",
