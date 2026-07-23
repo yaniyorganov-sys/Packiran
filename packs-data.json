@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-23T05:38:15Z",
+  "updatedAt": "2026-07-23T05:40:07Z",
   "packs": [
     {
       "name": "4sangre",
@@ -425,6 +425,14 @@
       "description": "نسخه 1.12به بالا",
       "compatibility": "سازگار با بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/وسایل پلیس/photo_2026-07-23_09-01-52.jpg",
+      "tested": true
+    },
+    {
+      "name": "ولیج های بزرگ تر و خفن تر",
+      "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/ولیج های بزرگ تر و خفن تر/File/Village%20Cities%20Add-On.mcaddon",
+      "description": "نسخه 1.12به بالا",
+      "compatibility": "سازگار با بدراک",
+      "icon": null,
       "tested": true
     },
     {
