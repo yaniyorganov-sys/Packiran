@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-23T05:31:41Z",
+  "updatedAt": "2026-07-23T05:33:18Z",
   "packs": [
     {
       "name": "4sangre",
@@ -401,6 +401,14 @@
       "description": "نسخه 1.12به بالا",
       "compatibility": "سازگار با بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/وسایل  دخترانه/photo_2026-07-23_08-30-08.jpg",
+      "tested": true
+    },
+    {
+      "name": "وسایل پلیس",
+      "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/وسایل پلیس/File/Police.mcaddon",
+      "description": "نسخه 1.12به بالا",
+      "compatibility": "سازگار با بدراک",
+      "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/وسایل پلیس/photo_2026-07-23_09-01-52.jpg",
       "tested": true
     },
     {
