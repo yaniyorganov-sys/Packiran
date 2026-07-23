@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-23T05:20:46Z",
+  "updatedAt": "2026-07-23T05:21:28Z",
   "packs": [
     {
       "name": "4sangre",
@@ -409,7 +409,7 @@
       "name": "Mystica Shaders v2.7.0",
       "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Shader/Mystica%20Shaders%20v2.7.0/File/Mystica%20Shaders%20v2.7.0.mcpack",
       "description": "نسخه 1.12به بالا",
-      "compatibility": null,
+      "compatibility": "سازگار با بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Shader/Mystica%20Shaders%20v2.7.0/photo_2026-07-23_08-49-20.jpg",
       "tested": true
     },
